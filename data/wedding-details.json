@@ -1,0 +1,36 @@
+{
+    "bride": {
+        "name": "Vimukthi Supriya A.",
+        "degree": "B.E.",
+        "parents": "D/o. K. Arunachalam & N. Uma Maheswari",
+        "role": "Bride",
+        "imageSrc": "/images/bride_1.jpg",
+        "bio": "A creative soul with a love for traditional arts and modern design. She brings joy and laughter wherever she goes."
+    },
+    "groom": {
+        "name": "Praveen C.S.",
+        "degree": "B.E.",
+        "parents": "S/o. Chandrasekaran, C. & Sumathi, D.",
+        "role": "Groom",
+        "imageSrc": "/images/groom_1.jpeg",
+        "bio": "A tech enthusiast and travel lover. He values family traditions and looks forward to building a beautiful future."
+    },
+    "events": {
+        "reception": {
+            "title": "Wedding Reception",
+            "date": "Saturday, 28th February 2026",
+            "time": "6:00 PM onwards",
+            "venueName": "Golden Meadows by Ravirappa",
+            "venueAddress": "1A, Patalamman Koil Street, Periyar Colony, Velampalayam, Tiruppur – 641602",
+            "mapLink": "https://share.google/1S6aej7c2vyrZfjNf"
+        },
+        "muhurtham": {
+            "title": "Muhurtham",
+            "date": "Sunday, 22nd February 2026",
+            "time": "Morning 7:30 AM – 9:00 AM",
+            "venueName": "Kurinji mahal",
+            "venueAddress": "",
+            "mapLink": "https://share.google/vFIUWwLjoCtCX1e91"
+        }
+    }
+}

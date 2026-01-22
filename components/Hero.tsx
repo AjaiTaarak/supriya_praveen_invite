@@ -14,7 +14,7 @@ interface HeroProps {
     date?: string;
 }
 
-export default function Hero({ brideName = "Supriya", groomName = "Praveen", date = "August 24th, 2025" }: HeroProps) {
+export default function Hero() {
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -38,7 +38,7 @@ export default function Hero({ brideName = "Supriya", groomName = "Praveen", dat
                     src="/images/couple_2.jpeg"
                     alt="Supriya & Praveen"
                     fill
-                    className="object-cover opacity-60"
+                    className="object-cover opacity-30"
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-cream/90 via-cream/70 to-cream/90" />
@@ -55,7 +55,7 @@ export default function Hero({ brideName = "Supriya", groomName = "Praveen", dat
                 />
             </div>
 
-            <div className="z-10 flex flex-col items-center px-8 w-full max-w-md pt-20">
+            <div className="z-10 flex flex-col items-center px-8 w-full max-w-2xl pt-20">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -76,28 +76,14 @@ export default function Hero({ brideName = "Supriya", groomName = "Praveen", dat
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <p className="text-maroon tracking-[0.3em] text-xs uppercase mb-4 font-semibold">
-                        Save The Date
-                    </p>
                     <h1
-                        className={`${playfair.className} text-6xl text-maroon font-bold mb-4 leading-tight`}
+                        className={`${playfair.className} text-4xl md:text-5xl text-maroon font-bold mb-4 leading-tight tracking-wide`}
                     >
-                        {brideName}
-                        <br />
-                        <span className="text-gold text-4xl block my-2 font-light">&</span>
-                        {groomName}
+                        We cordially invite you <br />
+                        <span className="text-3xl md:text-4xl block mt-4 font-normal italic text-maroon/80">
+                            to the wedding of
+                        </span>
                     </h1>
-                    <p className="text-maroon/80 text-lg mt-6 tracking-wide">
-                        We cordinally invite you to our wedding on
-                    </p>
-
-                    <div className="mt-8 relative">
-                        <DecorativeBorder className="mb-2 opacity-50" />
-                        <div className="text-maroon font-serif text-2xl py-2 font-bold">
-                            {date}
-                        </div>
-                        <DecorativeBorder className="rotate-180 mt-2 opacity-50" />
-                    </div>
                 </motion.div>
             </div>
 

@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import CoupleDetails from "@/components/CoupleDetails";
 import EventDetails from "@/components/EventDetails";
 import ThankYou from "@/components/ThankYou";
 import ReceptionBackground from "@/components/ReceptionBackground";
@@ -8,33 +8,12 @@ import weddingDetails from "@/data/wedding-details.json";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-cream">
-      <Hero
-        brideName={weddingDetails.bride.name.split(' ')[1]}
-        groomName={weddingDetails.groom.name.split(' ')[0]}
-        date={weddingDetails.events.muhurtham.date}
+      <Hero />
+
+      <CoupleDetails
+        bride={weddingDetails.bride}
+        groom={weddingDetails.groom}
       />
-
-      <div className="space-y-4">
-        <About
-          name={weddingDetails.bride.name}
-          degree={weddingDetails.bride.degree}
-          parents={weddingDetails.bride.parents}
-          role="Bride"
-          bio={weddingDetails.bride.bio}
-          imageSrc={weddingDetails.bride.imageSrc}
-          delay={0.2}
-        />
-
-        <About
-          name={weddingDetails.groom.name}
-          degree={weddingDetails.groom.degree}
-          parents={weddingDetails.groom.parents}
-          role="Groom"
-          bio={weddingDetails.groom.bio}
-          imageSrc={weddingDetails.groom.imageSrc}
-          delay={0.2}
-        />
-      </div>
 
       <div className="mt-12 bg-white/40 border-t border-b border-maroon/10">
         <EventDetails

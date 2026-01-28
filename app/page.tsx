@@ -15,7 +15,7 @@ export default function Home() {
         groom={weddingDetails.groom}
       />
 
-      <div className="mt-12 bg-white/40 border-t border-b border-maroon/10">
+      <div className="mt-12 bg-cream border-t border-b border-maroon/10">
         <EventDetails
           title={weddingDetails.events.muhurtham.title}
           date={weddingDetails.events.muhurtham.date}

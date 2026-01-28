@@ -75,20 +75,6 @@ function AnimatedText({ text, className = "", delay = 0, shouldAnimate }: Animat
 export default function CoupleDetails({ bride, groom }: CoupleDetailsProps) {
     const shouldReduceMotion = useReducedMotion();
 
-    // Animation variants for mobile text
-    const textVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: (i: number) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                delay: i * 0.1,
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        })
-    };
-
     // Disable animations if user prefers reduced motion
     const shouldAnimate = !shouldReduceMotion;
 
@@ -178,11 +164,10 @@ export default function CoupleDetails({ bride, groom }: CoupleDetailsProps) {
 
                     {/* Divider */}
                     <motion.div
-                        variants={shouldAnimate ? textVariants : undefined}
-                        initial={shouldAnimate ? "hidden" : false}
-                        whileInView={shouldAnimate ? "visible" : undefined}
+                        initial={shouldAnimate ? { opacity: 0, y: 20 } : false}
+                        whileInView={shouldAnimate ? { opacity: 1, y: 0 } : undefined}
                         viewport={{ once: true }}
-                        custom={5}
+                        transition={shouldAnimate ? { delay: 0.5, duration: 0.6 } : undefined}
                         className="flex items-center justify-center h-8"
                     >
                         <span className="text-gold font-serif text-3xl font-light italic">&</span>

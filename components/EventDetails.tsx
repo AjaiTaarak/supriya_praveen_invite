@@ -22,7 +22,7 @@ function useIsMobile() {
         const checkMobile = () => {
             setIsMobile(window.innerWidth < 768); // md breakpoint
         };
-        
+
         checkMobile();
         window.addEventListener("resize", checkMobile);
         return () => window.removeEventListener("resize", checkMobile);
@@ -49,8 +49,8 @@ export default function EventDetails({
 
     // Card animation variants for mobile Muhurtham
     const cardVariants = {
-        hidden: { 
-            opacity: 0, 
+        hidden: {
+            opacity: 0,
             y: 30,
             scale: 0.95
         },
@@ -60,7 +60,7 @@ export default function EventDetails({
             scale: 1,
             transition: {
                 duration: 0.6,
-                ease: "easeOut"
+                ease: [0.4, 0, 0.2, 1] as const
             }
         }
     };
@@ -74,7 +74,7 @@ export default function EventDetails({
             transition: {
                 delay: i * 0.1 + 0.2, // Start after card animation
                 duration: 0.5,
-                ease: "easeOut"
+                ease: [0.4, 0, 0.2, 1] as const
             }
         })
     };
@@ -99,11 +99,10 @@ export default function EventDetails({
                 whileInView={shouldAnimate ? "visible" : { opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={shouldAnimate ? undefined : { duration: 0.8 }}
-                className={`relative z-10 text-center border p-8 rounded-lg shadow-sm ${
-                    isMuhurtham 
-                        ? "bg-[#2f3e2e] border-cream/20" 
+                className={`relative z-10 text-center border p-8 rounded-lg shadow-sm ${isMuhurtham
+                        ? "bg-[#2f3e2e] border-cream/20"
                         : "border-maroon/20 bg-white/50 backdrop-blur-sm"
-                }`}
+                    }`}
             >
                 <motion.h3
                     variants={shouldAnimate ? textVariants : undefined}
@@ -111,9 +110,8 @@ export default function EventDetails({
                     whileInView={shouldAnimate ? "visible" : undefined}
                     viewport={{ once: true }}
                     custom={0}
-                    className={`text-3xl font-serif font-bold mb-6 ${
-                        isMuhurtham ? "text-gold" : "text-maroon"
-                    }`}
+                    className={`text-3xl font-serif font-bold mb-6 ${isMuhurtham ? "text-gold" : "text-maroon"
+                        }`}
                 >
                     {title}
                 </motion.h3>
@@ -156,9 +154,8 @@ export default function EventDetails({
                         whileInView={shouldAnimate ? "visible" : undefined}
                         viewport={{ once: true }}
                         custom={4}
-                        className={`w-16 h-px mx-auto my-4 ${
-                            isMuhurtham ? "bg-cream/30" : "bg-maroon/20"
-                        }`}
+                        className={`w-16 h-px mx-auto my-4 ${isMuhurtham ? "bg-cream/30" : "bg-maroon/20"
+                            }`}
                     />
 
                     <motion.div
@@ -187,9 +184,8 @@ export default function EventDetails({
                                 whileInView={shouldAnimate ? "visible" : undefined}
                                 viewport={{ once: true }}
                                 custom={7}
-                                className={`text-sm max-w-[250px] mx-auto ${
-                                    isMuhurtham ? "opacity-80" : "opacity-80"
-                                }`}
+                                className={`text-sm max-w-[250px] mx-auto ${isMuhurtham ? "opacity-80" : "opacity-80"
+                                    }`}
                             >
                                 {venueAddress}
                             </motion.p>
@@ -208,11 +204,10 @@ export default function EventDetails({
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm shadow-md transition-colors ${
-                        isMuhurtham
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm shadow-md transition-colors ${isMuhurtham
                             ? "bg-gold text-[#2f3e2e] hover:bg-gold/90"
                             : "bg-maroon text-cream hover:bg-maroon/90"
-                    }`}
+                        }`}
                 >
                     <MapPin size={16} />
                     Navigate to Venue
